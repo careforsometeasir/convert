@@ -9,21 +9,21 @@
 	<body>
 		<div class="container">
 			<h1>Welcome!</h1>
-			<p>This amazing contraption converts degrees (0 to 360) into the nonsense that the lego programming thing uses instead (0 to 100)</p>
+			<p>This amazing contraption converts degrees (360 being one full rotation) into the nonsense that the lego programming thing uses instead (100 being one whole rotation)</p>
 			<br>
-			<p>Enter desired angle in degrees (0 to 360):</p>
+			<p>Enter desired rotation in degrees (Full rotation is 360):</p>
 			<input id="degrees">
 			<br><br>
 			<button type="button" onClick="convert()">Convert!</button>
 			<br>
-			<p>Nonsense:</p>
+			<p>Nonsense (Full rotation is 100):</p>
 			<input id="nonsense">
 		</div>
 		<script>
 		function convert() {
 			var degrees, nonsense;
 			degrees = document.getElementById("degrees").value;
-			if (isNaN(degrees) || degrees < 0 || degrees > 360) {
+			if (isNaN(degrees)) {
         		nonsense = "Whoops!";
     		} else {
         		nonsense = degrees * 100 / 360;
